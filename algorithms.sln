@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pizano_period", "pizano_period\pizano_period.vcxproj", "{031CC970-F3E9-42C3-A07D-7DC7AC06CA97}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "euclidean_algorithm", "euclidean_algorithm\euclidean_algorithm.vcxproj", "{FC4A29E7-B0D1-4510-8E97-8D07FA2C15FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{031CC970-F3E9-42C3-A07D-7DC7AC06CA97}.Release|x64.Build.0 = Release|x64
 		{031CC970-F3E9-42C3-A07D-7DC7AC06CA97}.Release|x86.ActiveCfg = Release|Win32
 		{031CC970-F3E9-42C3-A07D-7DC7AC06CA97}.Release|x86.Build.0 = Release|Win32
+		{FC4A29E7-B0D1-4510-8E97-8D07FA2C15FA}.Debug|x64.ActiveCfg = Debug|x64
+		{FC4A29E7-B0D1-4510-8E97-8D07FA2C15FA}.Debug|x64.Build.0 = Debug|x64
+		{FC4A29E7-B0D1-4510-8E97-8D07FA2C15FA}.Debug|x86.ActiveCfg = Debug|Win32
+		{FC4A29E7-B0D1-4510-8E97-8D07FA2C15FA}.Debug|x86.Build.0 = Debug|Win32
+		{FC4A29E7-B0D1-4510-8E97-8D07FA2C15FA}.Release|x64.ActiveCfg = Release|x64
+		{FC4A29E7-B0D1-4510-8E97-8D07FA2C15FA}.Release|x64.Build.0 = Release|x64
+		{FC4A29E7-B0D1-4510-8E97-8D07FA2C15FA}.Release|x86.ActiveCfg = Release|Win32
+		{FC4A29E7-B0D1-4510-8E97-8D07FA2C15FA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
