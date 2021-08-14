@@ -9,11 +9,12 @@ using namespace std;
 class heap {
 private:
 	vector<int> list;
+	int listSize;
 public:
-	int size() {return list.size();}
+	int changeSize() { listSize = list.size();}
 	void add(int priority) {
 		list.push_back(priority);
-		int i = size() - 1;
+		int i = listSize - 1;
 		int parent = (i - 1) / 2;
 
 		while (i > 0 && list[parent] < list[i]) {
@@ -21,34 +22,44 @@ public:
 			i = parent;
 			parent = (i - 1) / 2;
 		}
+		changeSize();
 	}
 	void restor(int i) {
-		int leftChild, rightChild, largestChild;
-		for (;;){
-			leftChild = 2 * i + 1;
-			rightChild = 2 * i + 2;
-			largestChild = i;
-			if (leftChild < size() && list[leftChild] > list[largestChild])
-				largestChild = leftChild;
-			if (rightChild < size() && list[rightChild] > list[largestChild])
-				largestChild = rightChild;
-			if (largestChild == i)break;
-			swap(list[largestChild], list[i]);
-			largestChild = i;
+		int leftChild, rightChild;
+		
+		leftChild = 2 * i + 1;
+		rightChild = 2 * i + 2;
+		if (leftChild < listSize && list[leftChild] > list[i]) {
+			swap(list[leftChild], list[i]);
+			restor(leftChild);
+		}
+		if (rightChild < listSize && list[rightChild] > list[i]) {
+			swap(list[rightChild], list[i]);
+			restor(rightChild);
 		}
 	}
 	void buildHeap(int *arr, int arrSize){
 		for (int i = 0; i < arrSize; i++)
 			list.push_back(arr[i]);
 		//list.assign(begin(arrcp), end(arrcp));
-		for (int i = size() / 2; i >= 0; i--)
+		for (int i = listSize / 2; i >= 0; i--)
 			restor(i);
 	}
 	int max() {
-		int result = list[0];
-		list[0] = list[size() - 1];
-		auto iter = list.cbegin();
-		list.erase(iter + size() - 1);/// - 1
-		return result;
+		if (listSize != 0) {
+			int result = list[0];
+			list[0] = list[listSize - 1];
+			auto iter = list.cbegin();
+			list.erase(iter + listSize - 1);/// - 1
+			changeSize();
+			restor(0);
+			return result;
+		}
+		return -1;
+	}
+	void print() {
+		for (int i = 0; i < listSize; i++)
+			cout << list[i] << '\t';
+		cout << '\n';
 	}
 };

@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "haffman", "haffman\haffman.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "binaryHeap", "binaryHeap\binaryHeap.vcxproj", "{43254403-9E12-4BDD-8696-80B00BFD5795}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "binarySearch", "binarySearch\binarySearch.vcxproj", "{56CCDD31-B802-484B-99E2-3C5D428E5A1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{43254403-9E12-4BDD-8696-80B00BFD5795}.Release|x64.Build.0 = Release|x64
 		{43254403-9E12-4BDD-8696-80B00BFD5795}.Release|x86.ActiveCfg = Release|Win32
 		{43254403-9E12-4BDD-8696-80B00BFD5795}.Release|x86.Build.0 = Release|Win32
+		{56CCDD31-B802-484B-99E2-3C5D428E5A1D}.Debug|x64.ActiveCfg = Debug|x64
+		{56CCDD31-B802-484B-99E2-3C5D428E5A1D}.Debug|x64.Build.0 = Debug|x64
+		{56CCDD31-B802-484B-99E2-3C5D428E5A1D}.Debug|x86.ActiveCfg = Debug|Win32
+		{56CCDD31-B802-484B-99E2-3C5D428E5A1D}.Debug|x86.Build.0 = Debug|Win32
+		{56CCDD31-B802-484B-99E2-3C5D428E5A1D}.Release|x64.ActiveCfg = Release|x64
+		{56CCDD31-B802-484B-99E2-3C5D428E5A1D}.Release|x64.Build.0 = Release|x64
+		{56CCDD31-B802-484B-99E2-3C5D428E5A1D}.Release|x86.ActiveCfg = Release|Win32
+		{56CCDD31-B802-484B-99E2-3C5D428E5A1D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,15 +1,23 @@
 ﻿#include <iostream>
 #include "heap.h"
-
+#include <queue>
 using namespace std;
 
-int main()
-{
-    heap test;
-    int arr[] = { 1, 2, 3, 4, 3, 1, 2};
-    test.buildHeap(arr, 4);
-    cout << test.max() << '\n';
-    test.add(13);
-    cout << test.max() << '\n';
-    cout << "OK";
+int main() {
+    heap task;
+    int n, val;
+    string com;
+    priority_queue<int> asd;
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cin >> com;
+        if (com == "Insert") {
+            cin >> val;
+            task.add(val);
+        }
+        else cout << task.max() << '\n';
+       // task.print();
+    }
+    return 0;
 }
+//каждый раз пересобираю дерево /// переделать /// убрать restor()
