@@ -2,6 +2,7 @@
 #include <array>
 
 using namespace std;
+typedef long long int lli;
 
 void printArray(int* arr, int n) {
     for (int i = 0; i < n; i++)
@@ -9,12 +10,13 @@ void printArray(int* arr, int n) {
     cout << '\n';
 }
 
-void mergeFunc(int leftPointer, int middlePointer, int rightPointer, int arr[]) {
+lli  mergeFunc(int leftPointer, int middlePointer, int rightPointer, int arr[]) {
     int leftPartSize = middlePointer - leftPointer + 1,
         rightPartSize = rightPointer - middlePointer;
     int* mergedLeftSubArray = new int[leftPartSize];
     int* mergedRightSubArray = new int[rightPartSize];
     int leftPartPointer = 0, rightPartPointer = 0, mergerdArrayPointer = leftPointer;
+    lli arrayInversionCount = 0;
 
     for (int i = 0; i < leftPartSize; i++)
         mergedLeftSubArray[i] = arr[i + leftPointer];
@@ -22,13 +24,14 @@ void mergeFunc(int leftPointer, int middlePointer, int rightPointer, int arr[]) 
         mergedRightSubArray[i] = arr[i + middlePointer + 1];
 
     while (leftPartSize > leftPartPointer && rightPartSize > rightPartPointer) {
-        if (mergedLeftSubArray[leftPartPointer] < mergedRightSubArray[rightPartPointer]) {
+        if (mergedLeftSubArray[leftPartPointer] <= mergedRightSubArray[rightPartPointer]) {
             arr[mergerdArrayPointer] = mergedLeftSubArray[leftPartPointer];
             leftPartPointer++;
         }
         else {
             arr[mergerdArrayPointer] = mergedRightSubArray[rightPartPointer];
             rightPartPointer++;
+            arrayInversionCount += middlePointer - (leftPartPointer + leftPointer) + 1;
         }
         mergerdArrayPointer++;
     }
@@ -44,14 +47,18 @@ void mergeFunc(int leftPointer, int middlePointer, int rightPointer, int arr[]) 
     }
     delete[] mergedLeftSubArray;
     delete[] mergedRightSubArray;
+    return arrayInversionCount;
 }
 
-void mergeSort(int leftPointer, int rightPointer, int arr[]) {
-    if (rightPointer <= leftPointer)return;
-    int middlePointer = leftPointer + (rightPointer - leftPointer) / 2;
-    mergeSort(leftPointer, middlePointer, arr);
-    mergeSort(middlePointer + 1, rightPointer, arr);
-    mergeFunc(leftPointer, middlePointer, rightPointer, arr);
+lli mergeSort(int leftPointer, int rightPointer, int arr[]) {
+    lli arrayInversionCount = 0;
+    if (rightPointer > leftPointer) {
+        int middlePointer = leftPointer + (rightPointer - leftPointer) / 2;
+        arrayInversionCount += mergeSort(leftPointer, middlePointer, arr);
+        arrayInversionCount += mergeSort(middlePointer + 1, rightPointer, arr);
+        arrayInversionCount += mergeFunc(leftPointer, middlePointer, rightPointer, arr);
+    }
+    return arrayInversionCount;
 }
 
 
@@ -64,7 +71,7 @@ int main()
     for (int i = 0; i < n; i++)
         cin >> inputArray[i];
 
-    printArray(inputArray, n);
-    mergeSort(0, n - 1, inputArray);
-    printArray(inputArray, n);
+    ///// printArray(inputArray, n);
+    cout << mergeSort(0, n - 1, inputArray);
+    ////printArray(inputArray, n);
 }
