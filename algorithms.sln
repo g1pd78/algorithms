@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qsort", "points\points.vcxp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "countingSort", "countingSort\countingSort.vcxproj", "{0953EEF8-4471-4260-99E8-FFE62A68B43F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3wayQsort", "3wayQsort\3wayQsort.vcxproj", "{E8B2083B-7C2B-47F8-A535-0887B3C3E6A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -111,6 +113,14 @@ Global
 		{0953EEF8-4471-4260-99E8-FFE62A68B43F}.Release|x64.Build.0 = Release|x64
 		{0953EEF8-4471-4260-99E8-FFE62A68B43F}.Release|x86.ActiveCfg = Release|Win32
 		{0953EEF8-4471-4260-99E8-FFE62A68B43F}.Release|x86.Build.0 = Release|Win32
+		{E8B2083B-7C2B-47F8-A535-0887B3C3E6A0}.Debug|x64.ActiveCfg = Debug|x64
+		{E8B2083B-7C2B-47F8-A535-0887B3C3E6A0}.Debug|x64.Build.0 = Debug|x64
+		{E8B2083B-7C2B-47F8-A535-0887B3C3E6A0}.Debug|x86.ActiveCfg = Debug|Win32
+		{E8B2083B-7C2B-47F8-A535-0887B3C3E6A0}.Debug|x86.Build.0 = Debug|Win32
+		{E8B2083B-7C2B-47F8-A535-0887B3C3E6A0}.Release|x64.ActiveCfg = Release|x64
+		{E8B2083B-7C2B-47F8-A535-0887B3C3E6A0}.Release|x64.Build.0 = Release|x64
+		{E8B2083B-7C2B-47F8-A535-0887B3C3E6A0}.Release|x86.ActiveCfg = Release|Win32
+		{E8B2083B-7C2B-47F8-A535-0887B3C3E6A0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

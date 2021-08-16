@@ -27,7 +27,7 @@ int partition(int *arr, int leftPointer, int rightPointer) {
 }
 
 void qsort(int *arr, int leftSide, int rightSide) {
-	if (leftSide < rightSide) {
+	if (leftSide <= rightSide) {
 		int pivot = partition(arr, leftSide, rightSide);
 		qsort(arr, leftSide, pivot - 1);
 		qsort(arr, pivot + 1, rightSide);
